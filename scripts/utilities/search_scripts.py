@@ -1,5 +1,7 @@
 import json
 from fuzzywuzzy import fuzz
+import warnings
+warnings.simplefilter(action='ignore', category=UserWarning)
 
 def load_scripts(json_file):
     """Load the script inventory from a JSON file."""
@@ -28,6 +30,7 @@ def search_scripts(scripts, search_term=None, threshold=80):
 
 def print_script(script):
     """Print details of a single script."""
+    print("-" * 40)
     print(f"Title: {script['title']}")
     print(f"File: {script['file']}")
     print(f"Description: {script['description']}")
@@ -35,7 +38,7 @@ def print_script(script):
     print(f"Usage: {script['usage']}")
     print(f"Language: {script.get('language', 'N/A')}")
     print(f"Author: {script.get('author', 'N/A')}")
-    print(f"Date created: {script.get('lastdate_created_updated', 'N/A')}")
+    print(f"Date created: {script.get('date_created', 'N/A')}")
     print("-" * 40)
 
 def main():

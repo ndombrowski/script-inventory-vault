@@ -4,7 +4,8 @@ Welcome to the **Bioinformatics Script Inventory**! 🚀 This vault contains cat
 
 ## Categories
 
-- [[data_processing]]: Scripts for data cleaning, transformation and quality control
+- [[quality-control]]: Scripts for quality control and sanity checks
+- [[data_processing]]: Scripts for data cleaning and transformation 
 - [[visualization]]: Scripts for generating plots and visualization
 - [[utilities]] - Helper scripts for file I/O, logging, and other tasks
 - [[pipeline_scripts]] - Workflow automation scripts for common pipelines.

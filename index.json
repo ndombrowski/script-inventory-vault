@@ -1,7 +1,7 @@
 [
    {
     "title": "Search scripts vault",
-    "file": "python scripts/utilities/search_scripts.py",
+    "file": "scripts/utilities/search_scripts.py",
     "tags": ["utility_search"],
     "description": "This script asks for a search term and finds any scripts in this vault that might apply",
     "usage": "python scripts/utilities/search_scripts.py",
@@ -18,5 +18,108 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": "2024-11-20"
+  },
+  {
+    "title": "Check strandedness from de novo assembly",
+    "file": "scripts/quality_control/check_strand_incl_samtools.py",
+    "tags": ["RNA-seq", "Alignment", "Strandedness", "BAM_processing", "Quality_control"],
+    "description": " Check correct strandedness from RNA-seq data",
+    "usage": "python check_strand_incl_samtools.py -b File.bam -s R1_strand_info.txt -o strand_table.txt",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2025-02-03"
+  },
+  {
+    "title": "Pipeline to generate consensus amplicon sequences",
+    "file": "scripts/pipeline_scripts/ngspeciesid_pipeline_polished.sh",
+    "tags": ["Amplicon", "consensus_sequences", "clustering", "Long-read-sequencing"],
+    "description": "Pipeline to run NGSpeciesID to cluster and form a consensus sequences from long-read amplicon data. The output is further parsed to combine the output per sample into a single FASTA file",
+    "usage": "ngspeciesid_pipeline_polished.sh -r <desired_read_nr> -a <aln_thres> -m <mapped_thres> -d <run_dir> -i <input_dir> -o <output_dir> -l <log_dir> -p <polishing_method>",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": "2025-01-06"
+  },
+    {
+    "title": "Alignment pruner",
+    "file": "scripts/data_processing/alignment_pruner.pl",
+    "tags": ["Phylogeny", "pruning", "alignment", "alignment_filtering"],
+    "description": "Script to filter gappy or unconserved columns from a sequence alignment (gap-based, chi2)",
+    "usage": "perl alignment_pruner.pl--file alignment.fna --chi2_prune f0.05 > pruned.aln",
+    "language": "perl", 
+    "author": "https://github.com/novigit/davinciCode/tree/master",
+    "date_created": "2018-01-01"
+  },
+    {
+    "title": "Format figtree",
+    "file": "scripts/visualization/formatFigtree3.pl",
+    "tags": ["Phylogeny" , "Figtree"],
+    "description": "Format a newick tree to a figtree format, coloring the leaves depending on the taxa (or anything it's giving in the list with color)",
+    "usage": "perl formatFigtree3.pl listOfFiles2.list -C color_mapping2 -sl 10",
+    "language": "perl", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+    {
+    "title": "Filter fasta",
+    "file": "scripts/data_processing/screen_list_new.pl",
+    "tags": ["FASTA", "Filter_entries"],
+    "description": "Filter a fasta file for/against a list of entry names. If a third argument is given the list entries will be kept",
+    "usage": "perl screen_list.pl <list> <fasta file> <<keep?>>",
+    "language": "perl", 
+    "author": "J. Chapman",
+    "date_created": ""
+  },
+    {
+    "title": "Drop gappy sequence",
+    "file": "scripts/data_processing/faa_drop.py",
+    "tags": ["alignment", "alignment_filtering" ],
+    "description": " Drops sequences from a sequence alignment if that sequences has too many gaps",
+    "usage": "python fasta_drop.py original_aln.fas new_aln.fas 0.5",
+    "language": "python", 
+    "author": "Nina Dombrowski, adopted from here: https://www.biostars.org/p/434389/",
+    "date_created": ""
+  },
+    {
+    "title": "Extract sequence length and GC",
+    "file": "scripts/quality_control/fasta_length_gc.py",
+    "tags": ["FASTA", "Quality_control"],
+    "description": "Calculate the length and GC content for each record of a fasta file",
+    "usage": "python length_gc.py example.fasta",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+    {
+    "title": "Scrape Kegg to COG",
+    "file": "scripts/utilization/scrape_kegg_to_cog.py",
+    "tags": ["KEGG"],
+    "description": "For each KEGG ID finds associated COG IDs. If a list of KEGG IDs is available then also can be used in a loopx",
+    "usage": "python scrape_kegg_to_cog.py KEGG-ID outputDir",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+    {
+    "title": "Scrape KEGG module",
+    "file": "scripts/utilization/scrape_module_and_kegg.py",
+    "tags": ["KEGG"],
+    "description": "For each KEGG module finds associated KEGG IDs in order how the appear in the pathway",
+    "usage": "python scrape_module_and_kegg.py ModuleID outputDir",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+    {
+    "title": "Filter fasta (Python)",
+    "file": "scripts/data_processing/screen_fasta.py",
+    "tags": ["FASTA", "Filter_entries"],
+    "description": "x",
+    "usage": "python screen_fasta.py file.fasta pattern_file <--remove> <--exact>",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
   }
 ]
+
+
+
