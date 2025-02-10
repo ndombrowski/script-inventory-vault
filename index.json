@@ -1,0 +1,22 @@
+[
+   {
+    "title": "Search scripts vault",
+    "file": "python scripts/utilities/search_scripts.py",
+    "tags": ["utility_search"],
+    "description": "This script asks for a search term and finds any scripts in this vault that might apply",
+    "usage": "python scripts/utilities/search_scripts.py",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2025-02-10"
+  },
+  {
+    "title": "Generate Circos Plot",
+    "file": "scripts/visualization/generate_circos_plot.py",
+    "tags": ["visualization", "genomics", "gbk"],
+    "description": "his script generates circos plots from GenBank files. If desired also mark genes of interest.",
+    "usage": "python generate_circos_plot.py -i genome.gbk  -o circos_plot.pdf  -g genes_of_interest.txt",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-11-20"
+  }
+]
