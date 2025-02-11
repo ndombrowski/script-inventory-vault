@@ -39,7 +39,7 @@
     "author": "Nina Dombrowski",
     "date_created": "2025-01-06"
   },
-    {
+  {
     "title": "Alignment pruner",
     "file": "scripts/data_processing/alignment_pruner.pl",
     "tags": ["Phylogeny", "pruning", "alignment", "alignment_filtering"],
@@ -49,7 +49,7 @@
     "author": "https://github.com/novigit/davinciCode/tree/master",
     "date_created": "2018-01-01"
   },
-    {
+  {
     "title": "Format figtree",
     "file": "scripts/visualization/formatFigtree3.pl",
     "tags": ["Phylogeny" , "Figtree"],
@@ -59,7 +59,7 @@
     "author": "Nina Dombrowski",
     "date_created": ""
   },
-    {
+  {
     "title": "Filter fasta",
     "file": "scripts/data_processing/screen_list_new.pl",
     "tags": ["FASTA", "Filter_entries"],
@@ -69,7 +69,7 @@
     "author": "J. Chapman",
     "date_created": ""
   },
-    {
+  {
     "title": "Drop gappy sequence",
     "file": "scripts/data_processing/faa_drop.py",
     "tags": ["alignment", "alignment_filtering" ],
@@ -79,7 +79,7 @@
     "author": "Nina Dombrowski, adopted from here: https://www.biostars.org/p/434389/",
     "date_created": ""
   },
-    {
+  {
     "title": "Extract sequence length and GC",
     "file": "scripts/quality_control/fasta_length_gc.py",
     "tags": ["FASTA", "Quality_control"],
@@ -89,7 +89,7 @@
     "author": "Nina Dombrowski",
     "date_created": ""
   },
-    {
+  {
     "title": "Scrape Kegg to COG",
     "file": "scripts/utilization/scrape_kegg_to_cog.py",
     "tags": ["KEGG"],
@@ -99,7 +99,7 @@
     "author": "Nina Dombrowski",
     "date_created": ""
   },
-    {
+  {
     "title": "Scrape KEGG module",
     "file": "scripts/utilization/scrape_module_and_kegg.py",
     "tags": ["KEGG"],
@@ -109,12 +109,222 @@
     "author": "Nina Dombrowski",
     "date_created": ""
   },
-    {
+  {
     "title": "Filter fasta (Python)",
     "file": "scripts/data_processing/screen_fasta.py",
     "tags": ["FASTA", "Filter_entries"],
     "description": "x",
     "usage": "python screen_fasta.py file.fasta pattern_file <--remove> <--exact>",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Split fasta file",
+    "file": "scripts/data_processing/Split_Multifasta.py",
+    "tags": ["FASTA"],
+    "description": "This script takes multifasta file and splits it into several files with a desired amount of sequences",
+    "usage": "python -m input.fasta -n 1000",
+    "language": "python", 
+    "author": "Anja Spang",
+    "date_created": ""
+  },
+  {
+    "title": "Pipeline to run Autocycler (bash mode)",
+    "file": "scripts/pipeline_scripts/autocycler_bash.sh",
+    "tags": ["Genome_assembly", "Pipeline", "Short-read"],
+    "description": "Autocycler is a tool to generate genome assemblies from FASTQ files using multiple assemblers. This is a bash script that uses GNU parallel to run run autocycler on FASTQ files from different samples. Assemblies are generated in parallel with canu, flye, miniasm, necat, nextdenovo and raven.",
+    "usage": "bash autocycler_bash.sh -d folder_with_fastq -t 10 -m 5",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Pipeline to run Autocycler (SLURM mode)",
+    "file": "scripts/pipeline_scripts/autocycler_array.sh",
+    "tags": ["Genome_assembly", "Pipeline", "Short-read"],
+    "description": "Autocycler is a tool to generate genome assemblies from FASTQ files using multiple assemblers. This is a bash script that uses GNU parallel to run run autocycler on FASTQ files from different samples. Assemblies are generated in parallel with canu, flye, miniasm, necat, nextdenovo and raven.",
+    "usage": "sbatch autocycler_array.sh",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Find duplicated marker genes in phylogenetic analyses",
+    "file": "scripts/data_processing/find_dubs.py",
+    "tags": ["Phylogeny", "Quality_control" ],
+    "description": "Process COG marker files and find duplicates for easier screening of phylogenetic trees",
+    "usage": "python3 find_dubs.py --inputfolder FileLists/split/ --search-prefix COG --output FileLists/duplicated_cogs.txt",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Calculate summary statistics from a numerical data column",
+    "file": "scripts/quality_control/summarize_num_column.py",
+    "tags": ["summarize_data", "tabular_data"],
+    "description": "Script takes as input a tab-delimited file and the number of a numerical column to summarize. For the column of interest, the script outputs the mean, standard deviation as well as the 25th, 50th and 75th quantile range.",
+    "usage": "python summarize_num_column.py file.tab 3",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Parse ribodetector log files",
+    "file": "scripts/quality_control/parse_ribodector.py",
+    "tags": ["Quality_control" , "RNA-seq" , "Log-parsing"],
+    "description": "Software to parse the log files generated by ribodetector and returning the sample_name, total_sequences, rRNA_sequences and rRNA_percentage",
+    "usage": "python parse_ribodetector.py -i 05_quality_filtering/ribodetector -o 05_quality_filtering/ribodetector/summary.csv",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-06-04"
+  },
+  {
+    "title": "Write a slurm array sbatch script",
+    "file": "scripts/workflow_management/slurm_array_example.sh",
+    "tags": ["SLURM", "Array"],
+    "description": "Example for submitting an Slurm array job. Includes flexible basename extraction from multiple fastq files and only execution of commands if output file does not exist",
+    "usage": "sbatch slurm_array_example.sh",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Write a slurm sbatch script",
+    "file": "scripts/workflow_management/slurm_minimal_example.sh",
+    "tags": ["SLURM"],
+    "description": "Example script to run a sbatch script while also loading a conda environment",
+    "usage": "sbatch slurm_minimal_example.sh",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": "2018-01-01"
+  },
+  {
+    "title": "Count annotated splice junctions",
+    "file": "scripts/quality_control/count_unannotated_SJ_file.sh",
+    "tags": ["Quality_control", "alignment", "splicing"],
+    "description": "Script takes a list of STAR SJ files and counts how many of the junctions are annotated and unannotated",
+    "usage": "count_junctions.sh \"06_mapping/star/mapping/*_SJ.out.tab\"",
+    "language": "bash", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Submit a RScript via sbatch",
+    "file": "scripts/workflow_management/slurm_submit_r.sh",
+    "tags": ["R", "SLURM"],
+    "description": "Example script to run a Rscript via sbatch",
+    "usage": "sbatch slurm_submit_r.sh",
+    "language": "R", 
+    "author": "Nina Dombrowski",
+    "date_created": "2018-01-01"
+  },
+  {
+    "title": "Filter hmmsearch domain search results for non-overlapping domains",
+    "file": "scripts/data_processing/filter_domain_hmm.py",
+    "tags": ["Quality_control" , "Filter_entries", "Hmmsearch", "Protein_domains"],
+    "description": "Take the parsed output of a hmmsearch domain search and filter the table and discard overlapping domain hits",
+    "usage": "python3 filter_domain_hmm.py -i domain_results_red_e_cutoff.txt -o domain_results_red_e_cutoff_filtered.txt",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Parse the slurm log files from a FastP analysis",
+    "file": "scripts/quality_control/parse_fastp.py",
+    "tags": ["Log-parsing", "Quality_control" ],
+    "description": "Parse the slurm log files when running FastP via slurm and output relevant summary statistics. In this example FastP was run with the script ",
+    "usage": "python3 01_workflows_and_scripts/parse_fastp.py -i \"logs/fastp_54885_*.err\" -o \"04_read_quality/02_filtered_data/fastp_summary_v3.csv\"",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Parse the log files generated by STAR",
+    "file": "scripts/quality_control/parse_star.py",
+    "tags": ["alignment" , "Quality_control" , "STAR"],
+    "description": "Parse the log files from a STAR file and generate a file with summary statistics for several outputs",
+    "usage": "python parse_star.py --input_folder 06_mapping/star/mapping/ -o mapping_results.csv",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Parse a transdecoder gtf to get cleaner names",
+    "file": "scripts/data_processing/edit_transdecoder_gtf.py",
+    "tags": ["GTF", "Transdecoder", "File_cleaning"],
+    "description": "Clean gene IDs and transcript IDs in a transdecoder gtf file and shorten them",
+    "usage": "python edit_transdecoder_gtf.py --input transdecoder.gtf --output transdecoder_clean.gft",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Summarize the length of sequences in a fasta file",
+    "file": "scripts/data_processing/summarize_protein_length.py",
+    "tags": ["FASTA", "summarize_data" ],
+    "description": "Script to analyze protein lengths from a FASTA file and providing basic summary values (min, max, mean, median 95th percentile length and proteins longer than the 95th percentile or custom length value)",
+    "usage": "python summarize_proteins.py -i nina_test/transcripts.fasta.transdecoder.pep",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2024-10-21"
+  },
+  {
+    "title": "Estimate intron size from a gtf file",
+    "file": "scripts/quality_control/estimate_introns_from_gtf.py",
+    "tags": ["gtf", "summarize_data" , "genome" ],
+    "description": "Take a genome gtf file and extract intron sizes for each gene. Also outputs summary statistics, such as mean, median, min, max and 90/99/99.9 th length percentiles",
+    "usage": "python estimate_introns_from_gtf.py -i 03_data/Ochro1393_1_4_GeneCatalog_20181204.gtf -o 03_data/Ochromonas_gtf_introns.csv",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "2025-02-07"
+  },
+  {
+    "title": "Concatenate FASTA alignments",
+    "file": "xscripts/data_processing/catfasta2phyml.pl",
+    "tags": ["Phylogeny", "alignment"  ],
+    "description": "Script to concatenate FASTA alignments to PHYML, PHYLIP, or FASTA format",
+    "usage": "perl catfasta2phyml.pl -f -c Alignment/dedup/BMGE/h0.55/* > Alignment/dedup/concatenated/Elife_25_BacV5_v2.faa",
+    "language": "perl", 
+    "author": "https://github.com/nylander/catfasta2phyml",
+    "date_created": ""
+  },
+  {
+    "title": "Replace strings in a tree file ",
+    "file": "scripts/data_processing/Replace_tree_names.pl",
+    "tags": ["Phylogeny", "searching"],
+    "description": "Take a tab-delimited, 2-column file with original string and string to replace and use this to replace strings in a treefile",
+    "usage": "perl Replace_tree_names.pl names_to_replace Elife_25_BacV5_v2.treefile > Elife_25_BacV5_v2.treefile_renamed",
+    "language": "perl", 
+    "author": "Nina Dombrowski",
+    "date_created": ""
+  },
+  {
+    "title": "Detect potential pseudogenes in prokka output",
+    "file": "scripts/quality_control/prokka-suggest_pseudogenes.pl",
+    "tags": ["Pseudogene", "Prokka"],
+    "description": " Script to parse prokka output and number potential pseudogenes",
+    "usage": "perl prokka-suggest_pseudogenes.pl prokka.faa",
+    "language": "perl", 
+    "author": "Torsten Seemann",
+    "date_created": ""
+  },
+  {
+    "title": "Parse results from IPRscan",
+    "file": "scripts/data_processing/parse_IPRdomains_vs2_GO_2_ts_sigP.py",
+    "tags": ["data_parsing", "IPRscan", "annotations"],
+    "description": "Parse IPRscan result yielding a tab-delimited file with one gene per line and following columns separated  by tabs: GeneID IPRdomain   IPRdescription  PFAMdomain  PFAMdescription KEGGresults",
+    "usage": "python parse_IPRdomains_vs2_GO_2_ts_sigP.py -s thiopac_sulfur_genes.faa -i thiopac_sulfur_genes.faa.tsv -o thiopac_sulfur_genes.faa_parsed.tsv",
+    "language": "python", 
+    "author": "Anja Spang",
+    "date_created": ""
+  },
+  {
+    "title": "Parse annotation data in python",
+    "file": "scripts/tutorials/python-parse-annotation-data.md",
+    "tags": ["annotations" , "genome" ],
+    "description": "Python step-by-step code to summarize annotation data for several genomes",
+    "usage": "open code for details",
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": ""

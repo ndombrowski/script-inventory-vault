@@ -1,15 +1,29 @@
+# Utility scripts
+
+**Table of contents:**
+
+```table-of-contents
+title: 
+style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
+minLevel: 2 # Include headings from the specified level
+maxLevel: 6 # Include headings up to the specified level
+includeLinks: true # Make headings clickable
+hideWhenEmpty: false # Hide TOC if no headings are found
+debugInConsole: false # Print debug info in Obsidian console
+```
+
 ## Search index
 
-- **Script**:  [`search_scripts.py`](scripts/utilities/search_scripts.py)
+- **Script**:  [`search_scripts.py`](../scripts/utilities/search_scripts.py)
 - **Description**:  Search index for script of interest
 - **Dependencies**: fuzzywuzzy, python-Levenshtein
 - **Tags**: #searching
-- **Usage**: `python scripts/utilities/search_scripts.py`
+- **Usage**: `python ../scripts/utilities/search_scripts.py`
 
 
 ## Scrape KEGG to COG
 
-- **Script**:  [`scrape_kegg_to_cog.py`](scripts/utilization/scrape_kegg_to_cog.py)
+- **Script**:  [`scrape_kegg_to_cog.py`](../scripts/utilization/scrape_kegg_to_cog.py)
 - **Description**:  For each KEGG ID finds associated COG IDs. If a list of KEGG IDs is available then also can be used in a loop
 - **Dependencies**: BeautifulSoup, requests, pandas
 - **Tags**: #KEGG
@@ -19,7 +33,7 @@
 
 ## Scrape KEGG module
 
-- **Script**:  [`scrape_module_and_kegg.py`](scripts/utilization/scrape_module_and_kegg.py)
+- **Script**:  [`scrape_module_and_kegg.py`](../scripts/utilization/scrape_module_and_kegg.py)
 - **Description**: For each KEGG module finds associated KEGG IDs in order how the appear in the pathway
 - **Dependencies**: BeautifulSoup, requests, pandas, numpy
 - **Tags**: #KEGG

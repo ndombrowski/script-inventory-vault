@@ -1,8 +1,20 @@
 # Data visualization scripts
 
+**Table of contents:**
+
+```table-of-contents
+title: 
+style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
+minLevel: 2 # Include headings from the specified level
+maxLevel: 6 # Include headings up to the specified level
+includeLinks: true # Make headings clickable
+hideWhenEmpty: false # Hide TOC if no headings are found
+debugInConsole: false # Print debug info in Obsidian console
+```
+
 ## Genome visualization
 
-- **Script**:  [`generate_circos_plot.py`](scripts/visualization/generate_circos_plot.py)
+- **Script**:  [`generate_circos_plot.py`](../scripts/visualization/generate_circos_plot.py)
 - **Description**: Generate circos plots as png from Genbank files. If desired also marks genes of interest in the plot.
 - **Dependencies**: pycirclize, numpy, matplotlib
 - **Tags**: #visualization, #genome
@@ -15,7 +27,7 @@
 
 ## Format Figree
 
-- **Script**:  [`formatFigtree3.pl`](scripts/visualization/formatFigtree3.pl)
+- **Script**:  [`formatFigtree3.pl`](../scripts/visualization/formatFigtree3.pl)
 - **Description**: Format a newick tree to a figtree format, coloring the leaves depending on the taxa (or anything it's giving in the list with color)
 - **Dependencies**: NA
 - **Tags**:  #Phylogeny , #Figtree
