@@ -15,7 +15,7 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Pipeline to generate consensus amplicon sequences
 
-- **Script**:  [`ngspeciesid_pipeline_polished.sh`](../scripts/pipeline_../scripts/ngspeciesid_pipeline_polished.sh)
+- **Script**:  [`ngspeciesid_pipeline_polished.sh`](../scripts/ngspeciesid_pipeline_polished.sh)
 - **Description**: Pipeline to run NGSpeciesID to cluster and form a consensus sequences from long-read amplicon data. The output is further parsed to combine the output per sample into a single FASTA file
 - **Dependencies**: NGSpeciesID
 - **Tags**: #Amplicon, #consensus_sequences, #clustering, #Long-read-sequencing
@@ -25,7 +25,7 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Autocycler (bash mode)
 
-- **Script**:  [`autocycler_bash.sh`](../scripts/pipeline_../scripts/autocycler_bash.sh)
+- **Script**:  [`autocycler_bash.sh`](../scripts/autocycler_bash.sh)
 - **Description**: Autocycler is a tool to generate genome assemblies from FASTQ files using multiple assemblers. This is a bash script that uses GNU parallel to run run autocycler on FASTQ files from different samples. Assemblies are generated in parallel with canu, flye, miniasm, necat, nextdenovo and raven.
 - **Dependencies**: Autocycler, GNU parallel
 - **Tags**: #Genome_assembly, #Pipeline, #Short-read
@@ -36,7 +36,7 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Autocycler (SLURM mode)
 
-- **Script**:  [`autocycler_array.sh`](../scripts/pipeline_../scripts/autocycler_array.sh)
+- **Script**:  [`autocycler_array.sh`](../scripts/autocycler_array.sh)
 - **Description**: Autocycler is a tool to generate genome assemblies from FASTQ files using multiple assemblers. This is a SLURM script that uses GNU parallel to run run autocycler on FASTQ files from different samples. Assemblies are generated in parallel with canu, flye, miniasm, necat, nextdenovo and raven.
 - **Dependencies**: Autocycler, GNU parallel
 - **Tags**: #Genome_assembly, #Pipeline, #Short-read

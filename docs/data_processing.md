@@ -162,3 +162,15 @@ python3 01_workflows_and_../scripts/filter_domain_hmm.py \
 - **Input**: Fasta_file with all proteins, Result file of IPR scan
 - **Output**: For each protein all relevant domain information
 - **Related Snippets**:
+
+
+## Extract information from a Uniprot json file
+
+- **Script**:  [`uniprot_extract_json.py`](../scripts/data_processing/uniprot_extract_json.py)
+- **Description**:  For a given uniprot ID extract the description
+- **Dependencies**: json, pandas
+- **Tags**: #Uniprot, #data_parsing 
+- **Usage**: `python extract_json.py -i results.json  -o uniprot_to_name.txt`
+- **Input**: Uniprot json file
+- **Output**: Link uniprot name to uniprot description
+- **Related Snippets**: [[bash#Do a uniprot request]]

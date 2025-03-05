@@ -1,0 +1,48 @@
+%% Begin Waypoint %%
+- **data_analysis**
+- **data_processing**
+	- [[alignment_pruner.pl]]
+	- [[catfasta2phyml.pl]]
+	- [[edit_transdecoder_gtf.py]]
+	- [[faa_drop.py]]
+	- [[filter_domain_hmm.py]]
+	- [[find_dubs.py]]
+	- [[parse_IPRdomains_vs2_GO_2_ts_sigP.py]]
+	- [[Replace_tree_names.pl]]
+	- [[screen_fasta.py]]
+	- [[screen_list_new.pl]]
+	- [[Split_Multifasta.py]]
+	- [[summarize_protein_length.py]]
+	- [[uniprot_extract_json.py]]
+- **pipeline_scripts**
+	- [[autocycler_array.sh]]
+	- [[autocycler_bash.sh]]
+	- [[ngspeciesid_pipeline_polished.sh]]
+- **quality_control**
+	- [[check_strand_incl_samtools.py]]
+	- [[count_unannotated_SJ_file.sh]]
+	- [[estimate_introns_from_gtf.py]]
+	- [[fasta_length_gc.py]]
+	- [[parse_fastp.py]]
+	- [[parse_ribodector.py]]
+	- [[parse_star.py]]
+	- [[prokka-suggest_pseudogenes.pl]]
+	- [[run_fastp.sh]]
+	- [[summarize_num_column.py]]
+- **statistical_analyses**
+- **tutorials**
+	- [[python-parse-annotation-data]]
+- **utilities**
+	- [[scrape_kegg_to_cog.py]]
+	- [[scrape_module_and_kegg.py]]
+	- [[search_scripts.py]]
+- **visualization**
+	- [[color_mapping2]]
+	- [[formatFigtree3.pl]]
+	- [[generate_circos_plot.py]]
+- **workflow_management**
+	- [[slurm_array_example.sh]]
+	- [[slurm_minimal_example.sh]]
+	- [[slurm_submit_r.sh]]
+
+%% End Waypoint %%

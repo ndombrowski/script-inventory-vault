@@ -45,3 +45,23 @@ sed 's/;;/;NA/g' db/silva/general/silva-ref-modified.fasta | \
 	- Header lines always start on a new line
 	- Sequence lines are concatenated without line breaks
 	- Ensures that the final sequence ends with a new line
+
+
+## Convert fastq to fasta
+
+```bash
+sed -n '1~4s/^@/>/p;2~4p' file.fastq > file.fasta
+```
+
+**Explanation**
+
+- `sed -n '...' file.fastq > {output}`:
+    - `-n`: Suppresses automatic printing of pattern space. This is useful when you only want to print specific lines.
+    - `'1~4s/^@/>/p;2~4p'`: The script provided to `sed` for processing the input file.
+        - `1~4s/^@/>/p`:
+            - `1~4`: Selects every 4th line starting from line 1 (lines 1, 5, 9, 13, ...).
+            - `s/^@/>/`: Substitutes the `@` character at the beginning of the line with `>`. This is necessary because in FASTQ format, sequence identifiers start with `@`, while in FASTA format they start with `>`.
+            - `p`: Prints the modified lines.
+        - `2~4p`:
+            - `2~4`: Selects every 4th line starting from line 2 (lines 2, 6, 10, 14, ...).
+            - `p`: Prints these lines.

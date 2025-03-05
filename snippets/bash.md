@@ -189,3 +189,85 @@ grep COG0507 cog_mapping.txt
 
 Problems can, for example, look something like this: " ATPase/5�-3�_helicase_helicase_"
 
+
+## Make a comma separated list for certain files
+
+```bash
+# Find all R1 and R2 files and replace line break with comma
+R1_files=$(ls ${input_dir}/*_R1_trim.fastq.gz | tr '\n' ',')
+R2_files=$(ls ${input_dir}/*_R2_trim.fastq.gz | tr '\n' ',')
+
+# Remove the trailing comma from the lists
+R1_files=${R1_files%,}
+R2_files=${R2_files%,} 
+```
+
+
+## Do a uniprot request
+
+```bash
+# Make list with IDs of interest
+uniprot_list=$(awk '{print $4}' <(sed 1d 03_data/annotations/manual/TrophicModePrediction/hmm_to_trophic_mode_uniq.tsv) | sort | uniq | paste -sd ',' -)
+
+#{"jobId":"a79963e8f9e4e1f7feee0349885ca3ba27b5f70d"}
+curl --request POST 'https://rest.uniprot.org/idmapping/run' \
+  --form "ids=${uniprot_list}" \
+  --form 'from="UniProtKB_AC-ID"' \
+  --form 'to="UniRef90"'
+
+# Check if the results are ready
+curl -i 'https://rest.uniprot.org/idmapping/status/a79963e8f9e4e1f7feee0349885ca3ba27b5f70d'
+
+# Download results
+curl -s "https://rest.uniprot.org/idmapping/uniref/results/stream/a79963e8f9e4e1f7feee0349885ca3ba27b5f70d" > 03_data/annotations/manual/results.json 
+
+# found 453 hits 
+grep -oP "from" 03_data/annotations/manual/results.json | wc -l
+
+# Parse results
+python 01_workflows_and_scripts/extract_json.py -i 03_data/annotations/manual/results.json  -o 03_data/annotations/manual/uniprot_to_name.txt
+```
+
+
+## awk-add-filename-as-col
+
+```bash
+awk 'BEGIN{FS=OFS="\t"} NR==1 {print "NAME", $0; next} {print FILENAME, $0}' file
+```
+
+**Description**:  
+
+- For the first row `(NR==1)` → Prints "NAME" + the first row of the file.
+- For all other rows → Prints FILENAME + each row.
+
+
+## Bash functions
+
+Functions in bash have the following format: 
+
+```bash
+function name {
+	commands
+	return
+} 
+```
+
+We might also encounter this simpler form:
+
+```bash
+name () {
+	commands
+	return
+}
+```
+
+Minimal example:
+
+```bash
+report_disk_space() {
+	df -h
+	return
+}
+
+report_disk_space
+```

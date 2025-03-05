@@ -21,7 +21,7 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Usage**:  `python python generate_circos_plot.py -i genome.gbk  -o circos_plot.pdf  -g genes_of_interest.txt` 
 - **Input**: Genebank files
 - **Output**
-	- Png for genome of interest
+	- Png for genome of interest, Example files here: /zfs/omics/projects/sargo/j4_assembly_analysis/results/v3_trycycler/dnaapler/prokka
 	- ![[Pasted image 20250210110128.png|200]]
 
 

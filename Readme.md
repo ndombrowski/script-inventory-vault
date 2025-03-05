@@ -22,7 +22,7 @@ This obsidian vault contains categorized various bioinformatic workflows, script
 ## Adding new content
 
 1. Save the script in the appropriate folder under `scripts/`.
-2. Add a new section for the script in the relevant category-based document (e.g., `data_processing.md`).
+2. Add a new section for the script in the relevant category-based document in the docs folder (e.g., `data_processing.md`).
 3. Add the script to the [[index.json]].
 4. Link the script to relevant categories and examples.
 
