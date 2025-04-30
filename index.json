@@ -328,6 +328,46 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": ""
+  },
+  {
+    "title": "Summarize seqkit output",
+    "file": "scripts/quality_control/summarize_seqkit.py",
+    "tags": ["seqkit" , "quality_control" ],
+    "description": "Get mean, max, min, median and total for seqkit summary table",
+    "usage": "python scripts/summarize_seqkit.py -i results/seqkit/seqkit_stats.tsv -o results/seqkit/seqkit_stats_summary.tsv",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "04-04-2025"
+  },
+  {
+    "title": "Combine NanoPlot HTMLs into one",
+    "file": "scripts/visualization/combine_nanoplot_html.py",
+    "tags": ["visualization" , "combine_plots" ],
+    "description": "Combine individual length and quality htmls into one file",
+    "usage": "python scripts/combine_nanoplot_html.py --base_path results/nanoplot --output_html compiled_nanoplot.html --start_barcode 62 --end_barcode 96",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "04-04-2025"
+  },
+  {
+    "title": "Dotplot with minimap2 and pafCoordsDotPlotly",
+    "file": "scripts/snakemake_workflows/snakelast/snakelast_readme.md",
+    "tags": ["Genome_assembly", "alignment", "visualization", "dotplot"  ],
+    "description": "Generate Dotplot with minimap2 and pafCoordsDotPlotly",
+    "usage": "snakemake --snakefile workflow/Snakefile   --configfile config/config.yaml   --cores 1 --use-conda --conda-frontend mamba   --conda-prefix workflow/.snakemake/conda/",
+    "language": "snakemake", 
+    "author": "Nina Dombrowski",
+    "date_created": "29-04-2025"
+  },
+  {
+    "title": "Dotplot with LAST",
+    "file": "scripts/snakemake_workflows/snakelast/snakelast_readme.md",
+    "tags": ["Genome_assembly", "alignment", "visualization", "dotplot"  ],
+    "description": "Generate Dotplot with LAST",
+    "usage": "snakemake --snakefile workflow/Snakefile   --configfile config/config.yaml   --cores 1 --use-conda --conda-frontend mamba   --conda-prefix workflow/.snakemake/conda/",
+    "language": "snakemake", 
+    "author": "Nina Dombrowski",
+    "date_created": "29-04-2025"
   }
 ]
 

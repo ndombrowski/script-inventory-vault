@@ -10,6 +10,7 @@ This obsidian vault contains categorized various bioinformatic workflows, script
 - [[visualization]]: Scripts for generating plots and visualization
 - [[utilities]]: Helper scripts for file I/O, logging, and other tasks
 - [[pipeline_scripts]]:  Workflow automation scripts for common pipelines
+- [[snakemake_workflows]]
 - [[tutorials]]: Mostly links to useful tutorials but can also be tutorials for some workflows in r, python, etc.
 - The **example folder** includes some example workflows from various projects
 

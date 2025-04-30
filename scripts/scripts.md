@@ -29,6 +29,24 @@
 	- [[prokka-suggest_pseudogenes.pl]]
 	- [[run_fastp.sh]]
 	- [[summarize_num_column.py]]
+	- [[summarize_seqkit.py]]
+- **snakemake_workflows**
+	- **minimapdot**
+		- **config**
+			- [[config.yaml]]
+		- [[mapping.tsv]]
+		- [[minimapdot_readme]]
+		- **workflow**
+			- [[env.yaml]]
+			- [[Snakefile]]
+	- **snakelast**
+		- **config**
+			- [[config.yaml]]
+		- [[mapping.tsv]]
+		- [[snakelast_readme]]
+		- **workflow**
+			- [[env.yaml]]
+			- [[Snakefile]]
 - **statistical_analyses**
 - **tutorials**
 	- [[python-parse-annotation-data]]
@@ -38,6 +56,7 @@
 	- [[search_scripts.py]]
 - **visualization**
 	- [[color_mapping2]]
+	- [[combine_nanoplot_html.py]]
 	- [[formatFigtree3.pl]]
 	- [[generate_circos_plot.py]]
 - **workflow_management**

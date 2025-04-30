@@ -118,3 +118,15 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Input**: Prokka faa file
 - **Output**: Number of potential pseudogenes
 - **Related Snippets**:
+
+
+## Summarize summary statistics table from seqkit
+
+- **Script**:  [`summarize_seqkit.py`](../scripts/quality_control/summarize_seqkit.py)
+- **Description**: Get sum, mean, median, min, max for seqkit summary output
+- **Dependencies**: pandas, tabulate
+- **Tags**: #Quality_control
+- **Usage**: `python scripts/summarize_seqkit.py -i results/seqkit/seqkit_stats.tsv -o results/seqkit/seqkit_stats_summary.tsv`
+- **Input**: Txt file
+- **Output**: 
+	- File and md output for summary statistics

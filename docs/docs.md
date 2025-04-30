@@ -2,6 +2,7 @@
 - [[data_processing]]
 - [[pipeline_scripts]]
 - [[quality_control]]
+- [[snakemake_workflows]]
 - [[tutorials]]
 - [[utilities]]
 - [[visualization]]

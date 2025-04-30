@@ -36,4 +36,14 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Output**: List of formatted figrees
 
 
+## Visualize all NanoPlot Length and Quality graphs on one
+
+- **Script**:  [`combine_nanoplot_html.py`](../scripts/visualization/combine_nanoplot_html.py)
+- **Description**: Combine the individual nanoplot outputs for different barcodes into one. Note that this requires each sample to reside in its own folder, i.e. results/nanoplot/barcode01/file.html. For many files the script can be run by defining a start and end point to keep the output smaller.
+- **Dependencies**: 
+- **Tags**: #visualization, #combine_plots
+- **Usage**:  `python scripts/combine_nanoplot_html.py --base_path results/nanoplot --output_html compiled_nanoplot.html --start_barcode 62 --end_barcode 96` 
+- **Input**: `barcode[0-9]` folder with length versus quality html files
+- **Output**
+	- Combined HTML
 

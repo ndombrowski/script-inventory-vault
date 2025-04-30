@@ -1,0 +1,92 @@
+import os
+import pandas as pd
+import itertools
+
+# Debugging statements
+print("\nCurrent working directory:", os.getcwd())
+
+# Path to Snakemakefile (used to identify the scripts folder in the smk files)
+my_basedir = workflow.current_basedir
+print("Snakemake directory:", my_basedir)
+
+# Define set of allowed characters
+wildcard_constraints:
+    sample = '[A-Za-z0-9-]+',
+    output_dir = '[A-Za-z0-9-_]+'
+
+# ======================================================
+# Read in config file
+# ======================================================
+samples_table = pd.read_table(config["samples_file"], sep="\t", dtype=str).set_index("sample_id", drop=False)
+
+# Define all possible combinations of samples, ignoring self-comparisons
+sample_paths = samples_table['path'].to_dict()
+sample_ids = samples_table['sample_id'].tolist()
+
+#pairs = [tuple(sorted(p)) for p in itertools.combinations(sample_ids, 2)]
+#pairs = sorted(set(pairs))
+pairs = [p for p in itertools.combinations(sample_ids, 2)]
+print("Sample pairs to be analysed:", pairs)
+
+output_dir = config["output_folder"]
+print("Results will be saved in:", output_dir)
+
+# Generate output directory
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# ======================================================
+# Define rules
+# ======================================================    
+rule all:
+    input:
+        expand(
+            os.path.join(output_dir, "dotplot/{taxon1}-{sample1}_vs_{taxon2}-{sample2}.png"),
+            zip,
+            sample1=[a for a, b in pairs],
+            sample2=[b for a, b in pairs],
+            taxon1=[samples_table.loc[a, "taxon"] for a, b in pairs],  # Get taxon for sample1
+            taxon2=[samples_table.loc[b, "taxon"] for a, b in pairs],  # Get taxon for sample2
+        )
+
+# Rule to build the database for each sample
+rule build_db:
+    input:
+        fasta = lambda wc: sample_paths[wc.sample1]
+    output:
+        db_folder = directory(os.path.join(output_dir, "db/{sample1}"))
+    conda: "env.yaml"
+    shell:
+        """
+        mkdir -p {output.db_folder}
+        lastdb {output.db_folder}/{wildcards.sample1} {input.fasta}
+        """
+
+# Rule to the perform the lastal alignment for all possible sample pairs (excluding self)
+rule aln_last:
+    input:
+        db_folder = lambda wc: os.path.join(output_dir, "db", wc.sample1),
+        fasta = lambda wc: sample_paths[wc.sample2],
+    output:
+        aln = os.path.join(output_dir, "aln/{sample1}_vs_{sample2}.aln")
+    conda: "env.yaml"
+    shell:
+        """
+        lastal \
+          {input.db_folder}/{wildcards.sample1} \
+          {input.fasta} \
+        > {output.aln}
+        """
+
+# Rule to generate the dotplot from the alignment
+rule dotplot:
+    input:
+        aln = lambda wildcards: os.path.join(output_dir, f"aln/{wildcards.sample1}_vs_{wildcards.sample2}.aln")
+    output:
+        png = os.path.join(output_dir, "dotplot/{taxon1}-{sample1}_vs_{taxon2}-{sample2}.png"),
+    conda: "env.yaml"
+    shell:
+        """
+        # Generate dotplot from the alignment
+        last-dotplot {input.aln} {output.png}
+        """

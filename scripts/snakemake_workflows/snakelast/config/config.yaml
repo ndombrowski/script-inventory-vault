@@ -1,0 +1,33 @@
+################################################################################
+#                       GENERAL PARAMETERS SECTION                             # 
+#------------------------------------------------------------------------------#
+# The general parameters section defines parameters that are global or general #
+# for the complete workflow.                                                   #
+################################################################################
+
+#                             Mapping File                                     #
+#------------------------------------------------------------------------------#
+# Location of the mapping file                                                 #
+# The mapping file should be a tab separated file with the following columns:  #
+# sample	taxonID   path                                                       #
+# the sample names can contain letters, numbers and , "-"                      #
+# do not use spaces in the file paths                                          #
+#------------------------------------------------------------------------------#
+samples_file: mapping.tsv
+
+
+#------------------------------------------------------------------------------#
+#                             Output folder Name                               #
+#------------------------------------------------------------------------------#
+# The name of the output folder. Results will                                  #
+# be found in results/projects> after a successful run                         #
+#------------------------------------------------------------------------------#
+output_folder:            "results"
+
+
+#------------------------------------------------------------------------------#
+#                             Parameter settings                               #
+#------------------------------------------------------------------------------#
+# Settings used for  pafCoordsDotPlotly                                       #
+# be found in results/projects> after a sucessful run                         #
+#------------------------------------------------------------------------------#
