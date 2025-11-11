@@ -1,5 +1,9 @@
 %% Begin Waypoint %%
 - **data_analysis**
+	- [[idxstats_to_matrix.py]]
+	- [[insilico_pcr.py]]
+	- [[paf_to_matrix.py]]
+	- [[pivot_vsearch.py]]
 - **data_processing**
 	- [[alignment_pruner.pl]]
 	- [[catfasta2phyml.pl]]
@@ -42,11 +46,58 @@
 	- **snakelast**
 		- **config**
 			- [[config.yaml]]
+		- **data**
+			- [[mapping.tsv]]
+			- [[MG753774.1.fasta]]
+			- [[MK792749.1.fasta]]
+			- [[MT271684.1.fasta]]
+			- [[NC_032042.1.fasta]]
 		- [[mapping.tsv]]
+		- **results**
+			- **aln**
+				- [[MG753774.1_vs_MK792749.1.aln]]
+				- [[MG753774.1_vs_MT271684.1.aln]]
+				- [[MG753774.1_vs_NC_032042.1.aln]]
+				- [[MK792749.1_vs_MT271684.1.aln]]
+				- [[MK792749.1_vs_NC_032042.1.aln]]
+				- [[MT271684.1_vs_NC_032042.1.aln]]
+			- **db**
+				- **MG753774.1**
+					- [[MG753774.1.bck]]
+					- [[MG753774.1.des]]
+					- [[MG753774.1.prj]]
+					- [[MG753774.1.sds]]
+					- [[MG753774.1.ssp]]
+					- [[MG753774.1.suf]]
+					- [[MG753774.1.tis]]
+				- **MK792749.1**
+					- [[MK792749.1.bck]]
+					- [[MK792749.1.des]]
+					- [[MK792749.1.prj]]
+					- [[MK792749.1.sds]]
+					- [[MK792749.1.ssp]]
+					- [[MK792749.1.suf]]
+					- [[MK792749.1.tis]]
+				- **MT271684.1**
+					- [[MT271684.1.bck]]
+					- [[MT271684.1.des]]
+					- [[MT271684.1.prj]]
+					- [[MT271684.1.sds]]
+					- [[MT271684.1.ssp]]
+					- [[MT271684.1.suf]]
+					- [[MT271684.1.tis]]
+			- **dotplot**
+				- [[Clen-MG753774.1_vs_Clen-MT271684.1.png]]
+				- [[Clen-MG753774.1_vs_Crac-NC_032042.1.png]]
+				- [[Clen-MG753774.1_vs_Cser-MK792749.1.png]]
+				- [[Clen-MT271684.1_vs_Crac-NC_032042.1.png]]
+				- [[Cser-MK792749.1_vs_Clen-MT271684.1.png]]
+				- [[Cser-MK792749.1_vs_Crac-NC_032042.1.png]]
 		- [[snakelast_readme]]
 		- **workflow**
 			- [[env.yaml]]
 			- [[Snakefile]]
+	- [[snakelast.tar.gz]]
 - **statistical_analyses**
 - **tutorials**
 	- [[python-parse-annotation-data]]

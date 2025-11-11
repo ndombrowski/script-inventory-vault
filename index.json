@@ -368,6 +368,46 @@
     "language": "snakemake", 
     "author": "Nina Dombrowski",
     "date_created": "29-04-2025"
+  },
+  {
+    "title": "In silico PCR",
+    "file": "scripts/data_analysis/insilico_pcr.py",
+    "tags": ["PCR", "amplicon", "data_analysis" ],
+    "description": " Simulate PCR amplicons from a template sequence using user-specified primers",
+    "usage": "python scripts/insilico_pcr.py --fasta data/genome/LjRoot44.fna --fasta_out amplicon.fasta --fwd_primer AGAGTTTGATCMTGGCTCAG --rev_primer CGGTTACCTTGTTACGACTT --max_errors 2 --min_len 100   --max_len 2000",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "05-11-2025"
+  },
+  {
+    "title": "Pivot vsearch results",
+    "file": "scripts/data_analysis/pivot_vsearch.py",
+    "tags": ["vsearch", "sequence_identity", "data_parsing" ],
+    "description": "Takes the tsv output from vsearch (settings: blast6out and allpairs_global) and makes a hierarchical output of sequence identities",
+    "usage": "python pivot_vsearch.py",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "05-11-2025"
+  },
+  {
+    "title": "Generate OTU tables from idxstats output",
+    "file": "scripts/data_analysis/idxstats_to_matrix.py",
+    "tags": ["idxstats", "table_generation", "read_mapping" ],
+    "description": "Takes a list of idxstats file from different samples and converts it to an OTU-like table. ",
+    "usage": "python scripts/idxstats_to_matrix.py -i results/mapping_counts/ -o results/mapping_counts/",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "05-11-2025"
+  },
+  {
+    "title": "Generate OTU tables from minimap2 PAF output",
+    "file": "scripts/data_analysis/paf_to_matrix.py",
+    "tags": ["paf", "table_generation", "read_mapping" ],
+    "description": "Takes a list of minimap2 paf files from different samples and converts it to an OTU-like table on genus rank ",
+    "usage": "python scripts/paf_to_matrix.py -i results/mapping_counts/ -o results/mapping_counts/ -t data/genome_to_genus.tsv -s results/seqkit/fastq_filtered.tsv",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "05-11-2025"
   }
 ]
 
