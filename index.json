@@ -408,6 +408,26 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": "05-11-2025"
+  },
+  {
+    "title": "Generate PDD/Newick with colored labels from iqtree treefile",
+    "file": "scripts/data_analysis/parse_tree.py",
+    "tags": ["Phylogeny", "Figtree" ],
+    "description": "Takes an iqtree treefile and a color file as input and outputs a pdf with the tree as well as a newick file for easier reading in with figtree.",
+    "usage": "python parse_tree.py --tree trimmed.faa.treefile --colors colors --output py_tree.pdf --midpoint",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "28-11-2025"
+  },
+  {
+    "title": "Generate PDD/Newick with colored labels from iqtree treefile",
+    "file": "scripts/data_analysis/parse_tree.R",
+    "tags": ["Phylogeny", "Figtree" ],
+    "description": "Takes an iqtree treefile and a color file as input and outputs a pdf with the tree for easier reading in with figtree.",
+    "usage": "Rscript parse_tree.R --tree trimmed.faa.treefile --colors colors --output tree.pdf --midpoint",
+    "language": "R", 
+    "author": "Nina Dombrowski",
+    "date_created": "28-11-2025"
   }
 ]
 

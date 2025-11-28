@@ -36,6 +36,32 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Output**: List of formatted figrees
 
 
+## Render iqtree treefile (python )
+
+- **Script**:  [`parse_tree.py`](../scripts/visualization/parse_tree.py)
+- **Description**: Takes an iqtree treefile and a color file as input and outputs a pdf with the tree as well as a newick file for easier reading in with figtree.
+- **Dependencies**: ete3
+- **Tags**:  #Phylogeny , #Figtree
+- **Usage**:  `python parse_tree.py --tree trimmed.faa.treefile --colors colors --output py_tree.pdf --midpoint`
+- **Input**: 
+	- Iqtree treefile
+	- Two column table (tab separated) with columns label and column. The taxon labels can be pattern and don't have to be absolute matches to work
+- **Output**: PDF/Newick with tree and colored labels
+
+
+## Render iqtree treefile (R )
+
+- **Script**:  [`parse_tree.R`](../scripts/visualization/parse_tree.R)
+- **Description**: Takes an iqtree treefile and a color file as input and outputs a pdf with the tree as well as a newick file for easier reading in with figtree.
+- **Dependencies**: ggtree, phangorn, tidyverse, optparse
+- **Tags**:  #Phylogeny , #Figtree
+- **Usage**:  `Rscript parse_tree.R --tree trimmed.faa.treefile --colors colors --output tree.pdf --midpoint`
+- **Input**: 
+	- Iqtree treefile
+	- Two column table (tab separated) with columns label and column. The taxon labels can be pattern and don't have to be absolute matches to work
+- **Output**: PDF with tree and colored labels
+
+
 ## Visualize all NanoPlot Length and Quality graphs on one
 
 - **Script**:  [`combine_nanoplot_html.py`](../scripts/visualization/combine_nanoplot_html.py)
