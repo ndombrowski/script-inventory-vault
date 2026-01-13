@@ -104,12 +104,15 @@
 - **utilities**
 	- [[scrape_kegg_to_cog.py]]
 	- [[scrape_module_and_kegg.py]]
+	- [[scrape_pathway_hierarchy.py]]
 	- [[search_scripts.py]]
 - **visualization**
 	- [[color_mapping2]]
 	- [[combine_nanoplot_html.py]]
 	- [[formatFigtree3.pl]]
 	- [[generate_circos_plot.py]]
+	- [[parse_tree.py]]
+	- [[parse_tree.R]]
 - **workflow_management**
 	- [[slurm_array_example.sh]]
 	- [[slurm_minimal_example.sh]]

@@ -18,7 +18,7 @@ This obsidian vault contains categorized various bioinformatic workflows, script
 
 - Browse the categories for a list of all scripts per category
 - Use the search bar or tags to find scripts by keyword or category.
-- Inside the vault, run `python scripts/utilities/search_scripts.py` and provide a search term to search the [[index.json]] file. At the moment this allows to search scripts but not snippets
+- Inside the vault, run `python scripts/utilities/search_scripts.py` and when prompted provide a search term, i.e. KEGG, to search the [[index.json]] file. At the moment this allows to search scripts but not snippets
 
 ## Adding new content
 

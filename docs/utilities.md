@@ -40,3 +40,14 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Usage**: `python scrape_module_and_kegg.py ModuleID outputDir`
 - **Input**: Module ID
 - **Output**: Table with all KEGG ID found in a module
+
+
+## Scrape KEGG pathway hierarchies
+
+- **Script**:  [`scrape_pathway_hierarchy.py`](../scripts/utilization/scrape_pathway_hierarchy.py)
+- **Description**: For each KEGG pathway lists the higher categories that can be used for, i.e., pathway enrichment analyses
+- **Dependencies**: BeautifulSoup, requests, pandas, re
+- **Tags**: #KEGG
+- **Usage**: `python scrape_pathway_hierarchy.py`
+- **Input**:  NA
+- **Output**: Table with all all KEGG pathways and higher hierarchies

@@ -428,6 +428,16 @@
     "language": "R", 
     "author": "Nina Dombrowski",
     "date_created": "28-11-2025"
+  },
+  {
+    "title": "Scrape Kegg pathway hierarchies",
+    "file": "scripts/utilization/scrape_pathway_hierarchy.py",
+    "tags": ["KEGG"],
+    "description": "For each KEGG pathway lists the higher categories that can be used for, i.e., pathway enrichment analyses",
+    "usage": "python scrape_pathway_hierarchy.py",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "13-01-2026"
   }
 ]
 
