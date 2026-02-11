@@ -11,6 +11,7 @@
 	- [[faa_drop.py]]
 	- [[filter_domain_hmm.py]]
 	- [[find_dubs.py]]
+	- [[parse_dbCAN.py]]
 	- [[parse_IPRdomains_vs2_GO_2_ts_sigP.py]]
 	- [[Replace_tree_names.pl]]
 	- [[screen_fasta.py]]

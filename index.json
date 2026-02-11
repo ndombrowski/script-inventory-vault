@@ -438,6 +438,16 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": "13-01-2026"
+  },
+  {
+    "title": "Filter hmmsearch dbCAN domain hits",
+    "file": "scripts/data_processing/parse_dbCAN.py",
+    "tags": ["Quality_control" , "Filter_entries", "Hmmsearch", "Protein_domains", "CAZy"],
+    "description": "For each KEGG pathway lists the higher categories that can be used for, i.e., pathway enrichment analyses",
+    "usage": "python /zfs/omics/projects/bioinformatics/databases/dbCAN/parse_dbCAN.py -i results/domain_results.txt -m /zfs/omics/projects/bioinformatics/databases/dbCAN/fam-substrate-mapping-08262025.tsv -o results -e 1e-5 -c 0.30",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "11-02-2026"
   }
 ]
 

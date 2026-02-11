@@ -80,7 +80,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ## Filter hmmsearch domain search results for non-overlapping domains
 
 - **Script**:  [`filter_domain_hmm.py`](../scripts/data_processing/filter_domain_hmm.py)
-- **Description**: Take the parsed output of a hmmsearch domain search and filter the table and discard overlapping domain hits
+- **Description**: Take the parsed output of a hmmsearch domain search and filter the table and discard overlapping domain hits. Note that the filtering here allows for no overlaps, if a little overlap should be allowed then the sub-process in `parse_dbCAN.py` could be considered as well.
 - **Dependencies**: Pandas
 - **Tags**: #Quality_control , #Filter_entries, #Hmmsearch, #Protein_domains
 - **Usage**: 
@@ -174,3 +174,32 @@ python3 01_workflows_and_../scripts/filter_domain_hmm.py \
 - **Input**: Uniprot json file
 - **Output**: Link uniprot name to uniprot description
 - **Related Snippets**: [[bash#Do a uniprot request]]
+
+
+## Filter hmmsearch dbCAN domain hits
+
+- **Script**:  [`parse_dbCAN.py`](../scripts/data_processing/parse_dbCAN.py)
+- **Description**: Take the domain table from a dbCAN-hmmsearch search, filters by E-value and coverage, removes overlapping domains, and provides both detailed and summary outputs. Note that the filtering here is a bit less stringent as in `filter_domain_hmm.py` as we allow for some overlap.
+- **Dependencies**: Pandas
+- **Tags**: #Quality_control , #Filter_entries, #Hmmsearch, #Protein_domains, #CAZy
+- **Usage**: 
+```bash
+## Run search
+hmmsearch \
+    --tblout results/sequence_results.txt \
+    --domtblout results/domain_results.txt \
+    --notextw \
+    --cpu 4 \
+    /zfs/omics/projects/bioinformatics/databases/dbCAN/dbCAN-HMMdb-V14.txt \
+    GCF_000970205.faa
+
+## Parse the result (example)
+python /zfs/omics/projects/bioinformatics/databases/dbCAN/parse_dbCAN.py  \
+	-i results/domain_results.txt \
+	-m /zfs/omics/projects/bioinformatics/databases/dbCAN/fam-substrate-mapping-08262025.tsv \
+	-o results \
+	-e 1e-5 -c 0.30
+```
+- **Input**:  hmmsearch domain table
+- **Output**: Domain-filtered hmmsearch table
+- **Related Snippets**:
