@@ -448,6 +448,16 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": "11-02-2026"
+  },
+  {
+    "title": "Filter diamond blastp hydDB domain hits",
+    "file": "scripts/data_processing/parse_diamond_hydDB.py",
+    "tags": ["Quality_control" , "Filter_entries", "Diamond", "Hydrogenase"],
+    "description": "Take the output from a hydDB-diamond blastp search, filters by E-value and it also discards hits below a certain e-value thresholds and below the following percent identities (as recommended [here](https://github.com/GreeningLab/HydDB)",
+    "usage": "python /zfs/omics/projects/bioinformatics/databases/hyddb/release2022/parse_diamond_hydDB.py -i results/results.txt -o results/hyddb_parsed.tsv --evalue 1e-5",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "12-02-2026"
   }
 ]
 

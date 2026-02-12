@@ -203,3 +203,30 @@ python /zfs/omics/projects/bioinformatics/databases/dbCAN/parse_dbCAN.py  \
 - **Input**:  hmmsearch domain table
 - **Output**: Domain-filtered hmmsearch table
 - **Related Snippets**:
+
+
+## Filter diamond blastp hydDB domain hits
+
+- **Script**:  [`parse_diamond_hydDB.py`](../scripts/data_processing/parse_diamond_hydDB.py)
+- **Description**: Take the output from a hydDB-diamond blastp search, filters by E-value and it also discards hits below a certain e-value thresholds and below the following percent identities (as recommended [here](https://github.com/GreeningLab/HydDB))
+- **Dependencies**: Pandas
+- **Tags**: #Quality_control , #Filter_entries, #Diamond,, #Hydrogenase
+- **Usage**: 
+```bash
+## Run search
+diamond blastp -q data/genomes.faa \
+    --more-sensitive --evalue 1e-3 \
+    --threads 5 --max-target-seqs 20 \
+    --db /zfs/omics/projects/bioinformatics/databases/hyddb/release2022/hyddb \
+    --outfmt 6 qseqid qtitle qlen sseqid salltitles slen qstart qend sstart send evalue bitscore length pident \
+    --out results/results.txt
+
+# Parse the data
+python /zfs/omics/projects/bioinformatics/databases/hyddb/release2022/parse_diamond_hydDB.py \
+    -i results/results.txt \
+    -o results/hyddb_parsed.tsv \
+    --evalue 1e-5
+```
+- **Input**:  diamond blastp output table (make sure the right --outfmt is used)
+- **Output**: Filtered table
+- **Related Snippets**:
