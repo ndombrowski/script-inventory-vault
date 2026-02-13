@@ -458,7 +458,27 @@
     "language": "python", 
     "author": "Nina Dombrowski",
     "date_created": "12-02-2026"
-  }
+  },
+  {
+    "title": "Fix Prokka-generated GenBank files using the original FASTA file as reference",
+    "file": "scripts/data_processing/fix_prokka_gbk.py",
+    "tags": ["gbk" , "prokka", "prodigal"],
+    "description": "Reads contig names from the original FASTA file, then reads the GenBank file and finds concatenated LOCUS lines, then matches each LOCUS to its original contig name and properly separates the contig name from the sequence length. Note: the delimiter is currently not active to work with the FeGenie pipeline",
+    "usage": "python fix_prokka_gbk.py --fasta_dir data/genomes -gbk_dir data/prokka --output_dir data/prokka_fixed",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "13-02-2026"
+  },
+  {
+    "title": "FeGenie (edited py script)",
+    "file": "../scripts/pipeline_scripts/FeGenie_gbk.py",
+    "tags": ["annotation", "iron"],
+    "description": "[FeGenie](https://github.com/Arkadiy-Garber/FeGenie) is HMM-based identification and categorization of iron genes and iron gene operons in genomes and metagenome assemblies. This is an edited version that can be placed in the conda fegenie bin folder if one wants to work with prokka/prodigal gbk files as the v1.2 of the script otherwise generates an incorrect orf id.",
+    "usage": "see here: https://scienceparkstudygroup.github.io/ibed-bioinformatics-page/source/core_tools/fegenie.html",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "13-02-2026"
+  },
 ]
 
 

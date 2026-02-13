@@ -9,9 +9,12 @@
 	- [[catfasta2phyml.pl]]
 	- [[edit_transdecoder_gtf.py]]
 	- [[faa_drop.py]]
+	- [[fegenie_fix_prokka_gbk.py]]
 	- [[filter_domain_hmm.py]]
 	- [[find_dubs.py]]
+	- [[fix_prokka_gbk.py]]
 	- [[parse_dbCAN.py]]
+	- [[parse_diamond_hydDB.py]]
 	- [[parse_IPRdomains_vs2_GO_2_ts_sigP.py]]
 	- [[Replace_tree_names.pl]]
 	- [[screen_fasta.py]]
@@ -22,6 +25,7 @@
 - **pipeline_scripts**
 	- [[autocycler_array.sh]]
 	- [[autocycler_bash.sh]]
+	- [[FeGenie_gbk.py]]
 	- [[ngspeciesid_pipeline_polished.sh]]
 - **quality_control**
 	- [[check_strand_incl_samtools.py]]

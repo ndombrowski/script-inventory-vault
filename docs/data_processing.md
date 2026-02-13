@@ -230,3 +230,19 @@ python /zfs/omics/projects/bioinformatics/databases/hyddb/release2022/parse_diam
 - **Input**:  diamond blastp output table (make sure the right --outfmt is used)
 - **Output**: Filtered table
 - **Related Snippets**:
+
+
+## Fix Prokka-generated GenBank files using the original FASTA file as reference
+
+- **Script**:  [`fix_prokka_gbk.py`](../scripts/data_processing/fix_prokka_gbk.py)
+- **Description**: Reads contig names from the original FASTA file, then reads the GenBank file and finds concatenated LOCUS lines, then matches each LOCUS to its original contig name and properly separates the contig name from the sequence length. Note: the delimiter is currently not active to work with the FeGenie pipeline
+- **Dependencies**: 
+- **Tags**: #gbk , #Prokka, #Prodigal
+- **Usage**: 
+```bash
+## Fix several gbk headers
+python fix_prokka_gbk.py --fasta_dir data/genomes -gbk_dir data/prokka --output_dir data/prokka_fixed
+```
+- **Input**:  Folder with gbk files (prokka gbk files) and folder with corresponding genomes (prokka fna files)
+- **Output**: Gbk files with fixed locus tag
+- **Related Snippets**:

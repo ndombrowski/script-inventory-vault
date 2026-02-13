@@ -43,3 +43,13 @@ debugInConsole: false # Print debug info in Obsidian console
 - **Usage**: Before submitting, edit the script and provide the path to the data folder and the minimum cpus per assembly depending on the amount of resources the script is requesting. In this example two genomes are reconstructer (array 1-2) with 32 cpus per array. `sbatch autocycler_array.sh`
 - **Input**:  Folder with FASTQ files
 - **Output**: results folder with different outputs for each step of the analysis. The combined assembly can be found in results/autocycler_out
+
+## FeGenie (edited py script)
+
+- **Script**:  [`FeGenie_gbk.py`](../scripts/pipeline_scripts/FeGenie_gbk.py)
+- **Description**: [FeGenie](https://github.com/Arkadiy-Garber/FeGenie) is HMM-based identification and categorization of iron genes and iron gene operons in genomes and metagenome assemblies. This is an edited version that can be placed in the conda fegenie bin folder if one wants to work with prokka/prodigal gbk files as the v1.2 of the script otherwise generates an incorrect orf id
+- **Dependencies**: Autocycler, GNU parallel
+- **Tags**: #annotations , #iron
+- **Usage**: For more information, see [here](https://scienceparkstudygroup.github.io/ibed-bioinformatics-page/source/core_tools/fegenie.html)
+- **Input**:  See above
+- **Output**: See above
