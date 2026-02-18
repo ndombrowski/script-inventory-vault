@@ -479,6 +479,16 @@
     "author": "Nina Dombrowski",
     "date_created": "13-02-2026"
   },
+  {
+    "title": "Reverse complement",
+    "file": "../scripts/bioinformatics/reverse_complement.py",
+    "tags": ["FASTA", "DNA", "reverse_complement"],
+    "description": "Generates the reverse complement of a sequence either provide as input file, string or entry after being prompted",
+    "usage": "python reverse_complement.py",
+    "language": "python", 
+    "author": "Nina Dombrowski",
+    "date_created": "13-02-2026"
+  },
 ]
 
 

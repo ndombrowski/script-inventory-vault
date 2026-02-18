@@ -1,4 +1,6 @@
 %% Begin Waypoint %%
+- **bioinformatics**
+	- [[reverse_complement.py]]
 - **data_analysis**
 	- [[idxstats_to_matrix.py]]
 	- [[insilico_pcr.py]]
