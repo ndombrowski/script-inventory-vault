@@ -19,6 +19,13 @@ def main():
     parser = argparse.ArgumentParser(
         description=(
             "Color an unrooted tree using patterns from a color file.\n"
+            "--------------------------------------------------------\n"
+            "\nTakes as input:\n"
+            "-    iqtree treefile\n"
+            "-    color file: a two column, tab-separated file with the header: label color\n"
+            "         the label can be the taxon name or a pattern\n"
+            "         the color should be provided as a hexcode.\n"
+            "         if colors are not needed provide a empty colors file"
             "\n"
             "Outputs:\n"
             " - output.pdf\n"
@@ -43,11 +50,6 @@ def main():
     treefile = args.tree
     colorfile = args.colors
     midpoint = args.midpoint
-
-    # For testing
-    #treefile = "trimmed.faa.treefile"
-    #colorfile = "colors"
-    #midpoint = True
     
     # ==================================================================
     # Prepare tree (for PDF)

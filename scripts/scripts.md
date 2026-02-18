@@ -117,6 +117,7 @@
 	- [[search_scripts.py]]
 - **visualization**
 	- [[color_mapping2]]
+	- [[colors]]
 	- [[combine_nanoplot_html.py]]
 	- [[formatFigtree3.pl]]
 	- [[generate_circos_plot.py]]

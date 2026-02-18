@@ -161,14 +161,13 @@ def fix_locus_line(line, contig_names, delimiter="-"):
 
     # Limit name to reasonable length for GenBank format
     name = contig_name
-    #if len(name) > 16:
-    #    if delimiter in name:
-    #        # Split by delimiter and keep components from the end until we exceed 16 chars
-    #        parts_list = name.split(delimiter)
-    #        name = parts_list[-1]
-    #    else:
-    #        # No delimiter found, just use last 16 characters
-    #        name = name[-16:]
+    #if delimiter in name:
+    #    # Split by delimiter and keep components from the end until we exceed 16 chars
+    #    parts_list = name.split(delimiter)
+    #    name = parts_list[-1]
+    #else:
+    #   # No delimiter found, just use last 16 characters
+    #    name = name #name[-16:]
 
     # Extract other components from original line with fallbacks
     molecule_type = parts[3] if len(parts) > 3 else "DNA"

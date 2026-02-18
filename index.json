@@ -111,13 +111,13 @@
   },
   {
     "title": "Filter fasta (Python)",
-    "file": "scripts/data_processing/screen_fasta.py",
+    "file": "scripts/data_processing/filter_fasta.py",
     "tags": ["FASTA", "Filter_entries"],
     "description": "x",
-    "usage": "python screen_fasta.py file.fasta pattern_file <--remove> <--exact>",
+    "usage": "python filter_fasta.py -i genome.fna -l list.txt -o results/filtered.fna --keep_hits --exact",
     "language": "python", 
     "author": "Nina Dombrowski",
-    "date_created": ""
+    "date_created": "2026-18-02"
   },
   {
     "title": "Split fasta file",
@@ -411,7 +411,7 @@
   },
   {
     "title": "Generate PDD/Newick with colored labels from iqtree treefile",
-    "file": "scripts/data_analysis/parse_tree.py",
+    "file": "scripts/visualization/parse_tree.py",
     "tags": ["Phylogeny", "Figtree" ],
     "description": "Takes an iqtree treefile and a color file as input and outputs a pdf with the tree as well as a newick file for easier reading in with figtree.",
     "usage": "python parse_tree.py --tree trimmed.faa.treefile --colors colors --output py_tree.pdf --midpoint",
@@ -421,7 +421,7 @@
   },
   {
     "title": "Generate PDD/Newick with colored labels from iqtree treefile",
-    "file": "scripts/data_analysis/parse_tree.R",
+    "file": "scripts/visualization/parse_tree.R",
     "tags": ["Phylogeny", "Figtree" ],
     "description": "Takes an iqtree treefile and a color file as input and outputs a pdf with the tree for easier reading in with figtree.",
     "usage": "Rscript parse_tree.R --tree trimmed.faa.treefile --colors colors --output tree.pdf --midpoint",

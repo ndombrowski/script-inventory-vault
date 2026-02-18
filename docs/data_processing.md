@@ -36,11 +36,11 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Filter fasta (python)
 
-- **Script**:  [`screen_fasta.py`](../scripts/data_processing/screen_fasta.py)
+- **Script**:  [`filter_fasta.py`](../scripts/data_processing/filter_fasta.py)
 - **Description**: Filter sequences from a fasta file based on patterns or exact matches stored in a list. The elements of the list can either be kept or removed
 - **Dependencies**: biopython
 - **Tags**: #FASTA, #Filter_entries
-- **Usage**: `python screen_fasta.py file.fasta pattern_file <--remove> <--exact>`
+- **Usage**: `python filter_fasta.py -i genome.fna -l list.txt -o results/filtered.fna --keep_hits --exact`
 - **Input**: Fasta file
 - **Output**: Filtered fasta file
 

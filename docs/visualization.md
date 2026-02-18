@@ -40,12 +40,12 @@ debugInConsole: false # Print debug info in Obsidian console
 
 - **Script**:  [`parse_tree.py`](../scripts/visualization/parse_tree.py)
 - **Description**: Takes an iqtree treefile and a color file as input and outputs a pdf with the tree as well as a newick file for easier reading in with figtree.
-- **Dependencies**: ete3
+- **Dependencies**: ete3 (pip3 install PyQt5 ete3, otherwise TreeStyle is not found)
 - **Tags**:  #Phylogeny , #Figtree
 - **Usage**:  `python parse_tree.py --tree trimmed.faa.treefile --colors colors --output py_tree.pdf --midpoint`
 - **Input**: 
 	- Iqtree treefile
-	- Two column table (tab separated) with columns label and column. The taxon labels can be pattern and don't have to be absolute matches to work
+	- Two column table (tab separated) with columns label and column. The taxon labels can be pattern and don't have to be absolute matches to work.
 - **Output**: PDF/Newick with tree and colored labels
 
 
