@@ -81,13 +81,13 @@
   },
   {
     "title": "Extract sequence length and GC",
-    "file": "scripts/quality_control/fasta_length_gc.py",
+    "file": "scripts/quality_control/fasta_record_stats.py",
     "tags": ["FASTA", "Quality_control"],
-    "description": "Calculate the length and GC content for each record of a fasta file",
-    "usage": "python length_gc.py example.fasta",
+    "description": "Calculate total length, GC content and number of ambiguous bases for each record of a fasta file",
+    "usage": "python fasta_record_stats.py -i data/genome.fna -o results/genome_stats.csv",
     "language": "python", 
     "author": "Nina Dombrowski",
-    "date_created": ""
+    "date_created": "2026-02-18"
   },
   {
     "title": "Scrape Kegg to COG",

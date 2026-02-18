@@ -31,7 +31,7 @@
 	- [[check_strand_incl_samtools.py]]
 	- [[count_unannotated_SJ_file.sh]]
 	- [[estimate_introns_from_gtf.py]]
-	- [[fasta_length_gc.py]]
+	- [[fasta_record_stats.py]]
 	- [[parse_fastp.py]]
 	- [[parse_ribodector.py]]
 	- [[parse_star.py]]
@@ -39,6 +39,8 @@
 	- [[run_fastp.sh]]
 	- [[summarize_num_column.py]]
 	- [[summarize_seqkit.py]]
+- **recycled**
+	- [[fasta_length_gc.py]]
 - **snakemake_workflows**
 	- **minimapdot**
 		- **config**

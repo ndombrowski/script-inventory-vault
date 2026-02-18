@@ -28,13 +28,13 @@ debugInConsole: false # Print debug info in Obsidian console
 
 ## Extract sequence length and GC
 
-- **Script**:  [`fasta_length_gc.py`](../scripts/quality_control/fasta_length_gc.py)
-- **Description**: Calculate the length and GC content for each record of a fasta file
+- **Script**:  [`fasta_record_stats.py`](../scripts/quality_control/fasta_record_stats.py)
+- **Description**: Calculate the length, GC content and nr of ambiguous bases for each record of a fasta file
 - **Dependencies**: biopython
 - **Tags**: #Quality_control, #FASTA
-- **Usage**: `python length_gc.py example.fasta`
+- **Usage**: `python fasta_record_stats.py -i data/genome.fna -o results/genome_stats.csv`
 - **Input**: Nucleotide fasta file
-- **Output**: Table with the record id, gc content and sequence length
+- **Output**: Table with the record id, gc content, sequence length, and nr of ambiguous bp
 
 
 ## Get summary statistics for a numerical data column
